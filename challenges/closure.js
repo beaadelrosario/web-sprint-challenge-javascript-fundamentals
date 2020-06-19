@@ -29,8 +29,15 @@ myFunction();
 
 console.log('TaskBTask2');
 
-function summation(parameter){
-  return parameter += count++
-};
+function summation() {
+  let count = 0;
+  return function counter() {
+   return count++;
+  }
+}
+
+// function summation(){
+//   return parameter++;
+// };
 
 console.log(summation(4));
