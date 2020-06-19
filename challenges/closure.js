@@ -18,7 +18,21 @@ myFunction();
 
 // Explanation: 
 
+// BEA: The nested function is able to access the variable internally because its in the lexical scope of its parent. 
+//  we can pass variables down but we cannot pass them back up 
+// closures give us the ability to put functions together 
+// code that has been identified elsewhere that we can use later
 
 /* Task 2: Counter */
 
 /* Create a function called `summation` that accepts a parameter and uses a counter to return the summation of that number. For example, `summation(4)` should return 10 because 1+2+3+4 is 10. */
+
+
+function summation(parameter){
+  let count = 0;
+  return function counter(){
+    return count++;
+  }
+};
+
+console.log(summation(4));
