@@ -22,12 +22,12 @@ The zoos want to display both the scientific name and the animal name in front o
 */
 const displayNames = []; //new array
 
-zooAnimals.forEach (function(element){
-  return displayNames.push(`Name: ${element.animal_name} , Scientific ${element.scientific_nam}`);
-})
+zooAnimals.forEach (function(item){
+  return displayNames.push(`Name: ${item.animal_name} , Scientific: ${item.scientific_name}`);
+});
 
-console.log('test');
-
+console.log('~~request1');
+console.log(displayNames);
 
 /* Request 2: .map()
 
@@ -39,6 +39,7 @@ const lowCaseAnimalNames = zooAnimals.map(function(item){
   return item.animal_name.toLowerCase();
 })
 
+console.log('~~request2');
 console.log(lowCaseAnimalNames);
 
 /* Request 3: .filter() 
@@ -50,6 +51,7 @@ const lowPopulationAnimals = zooAnimals.filter(function(item){
   return item.population < 5;
 })
 
+console.log('~~request3');
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
@@ -57,12 +59,14 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-let populationTotal = 0;
+console.log('~~request4');
+let populationTotal = zooAnimals.reduce((acc, animal) => 
+acc += animal.population, 0);
 console.log(populationTotal);
 
 
 // ==== Callbacks ====  
-
+console.log('~~Callbacks');
 /* Step 1: Create a higher-order function
   * Create a higher-order function named consume with 3 parameters: a, b and cb
   * The first two parameters can take any argument (we can pass any value as argument)

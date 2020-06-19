@@ -2,6 +2,7 @@
 
 /* Task 1: Study the code below and explain in your own words why nested function can access the variable internal. */
 
+console.log('~~TaskBTask1');
 
 const external = "I'm outside the function";
 
@@ -27,17 +28,14 @@ myFunction();
 
 /* Create a function called `summation` that accepts a parameter and uses a counter to return the summation of that number. For example, `summation(4)` should return 10 because 1+2+3+4 is 10. */
 
-console.log('TaskBTask2');
+console.log('~~TaskBTask2');
 
-function summation() {
-  let count = 0;
-  return function counter() {
-   return count++;
-  }
+function summation(counter) {
+  if (counter == 1)
+    return 1;
+  else
+    return counter + summation(counter - 1);
 }
 
-// function summation(){
-//   return parameter++;
-// };
 
 console.log(summation(4));
