@@ -37,5 +37,14 @@ function summation(counter) {
     return counter + summation(counter - 1);
 }
 
-
 console.log(summation(4));
+
+function summation2(number) {
+  let counter = 0
+  for (let i = 0; i <= number; i++) {
+  counter += i
+  }
+  return counter
+}
+
+console.log(summation2(4));
