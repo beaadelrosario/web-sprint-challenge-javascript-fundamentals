@@ -26,10 +26,10 @@
 */
 
 
-function CuboidMaker(attributes){
-  this.length = attributes.length
-  this.width = attributes.width;
-  this.height = attributes.height;
+function CuboidMaker(paramlength, width, height){ //using paramlength instead of length
+  this.paramlength = paramlength;
+  this.width = width;
+  this.height = height;
 };
 
 CuboidMaker.prototype.volume = function(){
